@@ -19,16 +19,34 @@ button,
 	font-family: 'Sue Ellen Francisco', cursive;
 	text-align: center;
 	padding: 5px;
+	line-height: 100%;
+	color: #f9f9f9;
 }
 
 #search,
 #add-gif,
-#submit-button,
-#gifs,
-#gif-buttons {
+#gifs {
+	padding: 5px;
+	font-size: 30px;
+}
+
+#gif-buttons,
+#submit-button {
+	margin: 3px;
+	font-size: 30px;
 	padding: 10px;
-	font-size: 24px;
+}
+
+/*#add-gifs-here {
 	text-shadow: 0 0 8px #ff9387, 0 0 8px #a8a8d7;
+	margin-top: 20px;
+}*/
+
+#add-gif-input {
+	line-height: 100%;
+	font-size: 26px;
+	background-color: #fafafa;
+	margin-top: 20px;
 }
 
 #footer {
