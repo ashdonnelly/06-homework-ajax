@@ -8,10 +8,27 @@ body {
 }
 
 h1 {
-	font-size: 88px;
+	font-size: 80px;
 	color: black;
 	text-shadow: 0 0 8px #ff9387, 0 0 8px #a8a8d7;
 	padding-top: 15px;
+}
+
+button,
+.btn {
+	font-family: 'Sue Ellen Francisco', cursive;
+	text-align: center;
+	padding: 5px;
+}
+
+#search,
+#add-gif,
+#submit-button,
+#gifs,
+#gif-buttons {
+	padding: 10px;
+	font-size: 24px;
+	text-shadow: 0 0 8px #ff9387, 0 0 8px #a8a8d7;
 }
 
 #footer {
