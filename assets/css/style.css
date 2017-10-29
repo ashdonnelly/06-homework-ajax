@@ -26,21 +26,17 @@ button,
 #search,
 #add-gif,
 #gifs {
+	line-height: 100%;
 	padding: 5px;
 	font-size: 30px;
 }
 
 #gif-buttons,
 #submit-button {
-	margin: 3px;
+	margin: 4px;
 	font-size: 30px;
-	padding: 10px;
+	padding-top: 12px;
 }
-
-/*#add-gifs-here {
-	text-shadow: 0 0 8px #ff9387, 0 0 8px #a8a8d7;
-	margin-top: 20px;
-}*/
 
 #add-gif-input {
 	line-height: 100%;

@@ -1,31 +1,58 @@
-var topics ["jake the dog", "finn the human", "BMO", "princess bubblegum",
- "ice king", "tree trunks", "lumpy space princess", "marceline", "rainicorn"]
+// play short song when page loads
+//maybe lay it instead when a gif is added
+// $(document).ready(function() {
+//     $("#my-audio").get(0).play();
+// });
 
-$("#cat-button").on("click", function() {
+//==================================================================
+		//SETUP VARIABLES
+//==================================================================
 
-      // Storing our giphy API URL for images
-      var queryURL = "https://api.giphy.com/GET/v1/gifs/search/api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78";
+// Initial array of gifs
+// search terms automatically have adventure+time+ in front of them when searched
+var gifsArray = ["Jake", "Finn", "BMO", "bubblegum", "tree trunks", "lumpy", "marceline", "lemongrab", "rainicorn", "gunter", "friends", "love", "swords", "flame"]
+console.log(gifsArray);
 
-      // Perfoming an AJAX GET request to our queryURL
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      })
+var authKey 	= "&api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78";
 
-      // After the data from the AJAX request comes back
-      .done(function(response) {
+//search parameters
+var queryTerm 	= "";
+var numResults 	= 0;
+var rating 		= "";
 
-        // Saving the image_original_url property
-        var imageUrl = response.data.image_original_url;
+//URL base
+var queryURLBase = "http://api.giphy.com/v1/gifs/search?q=adventure+time";
 
-        // Creating and storing an image tag
-        var gif = $("<img>");
+//control number of gifs
+var gifCounter 	= 0;
 
-        // Setting the catImage src attribute to imageUrl
-        gif.attr("src", imageUrl);
-        gif.attr("alt", "adventure time gif");
+//==================================================================
+		//FUNCTIONS
+//==================================================================
+//AJAX call
+function runQuery(numGifs, queryURL){
 
-        // Prepending the catImage to the images div
-        $("#gifs").prepend(gif);
-      });
-    });
+	// AJAX function
+	$.ajax({url: queryURL, method: "GET"})
+		.done(function(giphyData) {
+
+			console.log(giphyData);
+			console.log(queryURL);
+		})
+}
+
+//==================================================================
+		//MAIN PROCESSES (CALLS)
+//==================================================================
+$("#submit-button").on("click", function() {
+
+	queryTerm = $("#search").val().trim();
+	console.log(queryTerm);
+
+	var newURL = queryURLBase + "+" + queryTerm + authKey;
+	console.log(newURL);
+
+	// runQuery(10, "http://api.giphy.com/v1/gifs/search?q=adventure+time+&api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78");
+	
+	return false;
+})
