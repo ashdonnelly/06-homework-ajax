@@ -10,7 +10,7 @@
 
 // Initial array of gifs
 // search terms automatically have adventure+time+ in front of them when searched
-var gifsArray 	= ["Jake", "Finn", "BMO", "Bubblegum", "Trunks", "pie", "space", "Marceline", "friends", "Lemongrab", "Rainicorn", "Gunter", "love"]
+var gifsArray 	= ["Jake", "Finn", "BMO", "Princess Bubblegum", "Tree Trunks", "pie", "Lumpy Space Princess", "Marceline", "best friends", "Lemongrab", "Rainicorn", "Gunter", "love"]
 console.log(gifsArray);
 
 var authKey 	= "&api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78";
@@ -85,6 +85,8 @@ $("#submit-button").on("click", function(event) {
 	renderButtons();
 });
 
+//
+
 //==================================================================
 		//MAIN PROCESSES (CALLS)
 //==================================================================
@@ -95,10 +97,10 @@ $("#submit-button").on("click", function() {
 	console.log(queryTerm);
 
 	//replace spaces with +
-	// var replaced = queryTerm.replace(/ /g, "+");
+	var spacelessQueryTerm = queryTerm.replace(/\s/g, "+");
 
 	// URL base + search term + auth key + limit results to 10 gifs + language english + size 200
-	var newURL = queryURLBase + "+" + queryTerm.replace(/ /g, "+") + authKey + "&limit=10&lang=en&fixed_height=200";
+	var newURL = queryURLBase + "+" + spacelessQueryTerm + authKey + "&limit=10&lang=en&fixed_height=200";
 	console.log(newURL);
 	
 	return false;
