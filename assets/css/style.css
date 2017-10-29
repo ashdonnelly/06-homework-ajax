@@ -34,9 +34,14 @@ button,
 .gif-button-new,
 #gif-buttons,
 #submit-button {
-	margin: 4px;
-	font-size: 30px;
+	margin: 8px;
+	font-size: 24px;
 	padding-top: 12px;
+	opacity: 0.8;
+}
+
+#submit-button {
+	opacity: 1;
 }
 
 #add-gif-input {
