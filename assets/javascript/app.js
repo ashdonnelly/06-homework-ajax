@@ -10,21 +10,22 @@
 
 // Initial array of gifs
 // search terms automatically have adventure+time+ in front of them when searched
-var gifsArray = ["Jake", "Finn", "BMO", "bubblegum", "tree trunks", "lumpy", "marceline", "lemongrab", "rainicorn", "gunter", "friends", "love", "swords", "flame"]
+var gifsArray = ["Jake", "Finn", "BMO", "Princess+Bubblegum", "Tree+Trunks", "Lumpy+Space+Princess", "Marceline", "Lemongrab", "Rainicorn", "Gunter", "friends", "love"]
 console.log(gifsArray);
 
 var authKey 	= "&api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78";
 
+//don't know if I even need this
+var rating 		= "";
+
 //search parameters
 var queryTerm 	= "";
-var numResults 	= 0;
-var rating 		= "";
 
 //URL base
 var queryURLBase = "http://api.giphy.com/v1/gifs/search?q=adventure+time";
 
-//control number of gifs
-var gifCounter 	= 0;
+// //control number of gifs
+// var gifCounter 	= 0;
 
 //==================================================================
 		//FUNCTIONS
@@ -46,13 +47,14 @@ function runQuery(numGifs, queryURL){
 //==================================================================
 $("#submit-button").on("click", function() {
 
+	// grab search from input and make it queryTerm with outer spaces trimmed
 	queryTerm = $("#search").val().trim();
 	console.log(queryTerm);
 
+	// URL base + search term + auth key + limit results to 10 gifs + language english + size 200
 	var newURL = queryURLBase + "+" + queryTerm + authKey + "&limit=10&lang=en&fixed_height=200";
 	console.log(newURL);
-
-	// runQuery(10, "http://api.giphy.com/v1/gifs/search?q=adventure+time+&api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78");
 	
 	return false;
-})
+});
+
