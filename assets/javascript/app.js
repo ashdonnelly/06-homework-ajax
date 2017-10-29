@@ -10,7 +10,7 @@
 
 // Initial array of gifs
 // search terms automatically have adventure+time+ in front of them when searched
-var gifsArray = ["Jake", "Finn", "BMO", "Princess+Bubblegum", "Tree+Trunks", "Lumpy+Space+Princess", "Marceline", "Lemongrab", "Rainicorn", "Gunter", "friends", "love"]
+var gifsArray 	= ["Jake", "Finn", "BMO", "Bubblegum", "Trunks", "pie", "Space", "Marceline", "friends", "Lemongrab", "Rainicorn", "Gunter", "love"]
 console.log(gifsArray);
 
 var authKey 	= "&api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78";
@@ -22,7 +22,7 @@ var rating 		= "";
 var queryTerm 	= "";
 
 //URL base
-var queryURLBase = "http://api.giphy.com/v1/gifs/search?q=adventure+time";
+var queryURLBase = "https://api.giphy.com/v1/gifs/search?q=adventure+time";
 
 // //control number of gifs
 // var gifCounter 	= 0;
@@ -58,3 +58,6 @@ $("#submit-button").on("click", function() {
 	return false;
 });
 
+$("#button").on("click", function() {
+	var gif = $(this).attr("data-")
+});
