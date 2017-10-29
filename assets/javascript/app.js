@@ -49,7 +49,7 @@ $("#submit-button").on("click", function() {
 	queryTerm = $("#search").val().trim();
 	console.log(queryTerm);
 
-	var newURL = queryURLBase + "+" + queryTerm + authKey;
+	var newURL = queryURLBase + "+" + queryTerm + authKey + "&limit=10";
 	console.log(newURL);
 
 	// runQuery(10, "http://api.giphy.com/v1/gifs/search?q=adventure+time+&api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78");
