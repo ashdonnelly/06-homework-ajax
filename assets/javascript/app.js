@@ -10,7 +10,7 @@
 
 // Initial array of gifs
 // search terms automatically have adventure+time+ in front of them when searched
-var gifsArray 	= ["Jake", "Finn", "BMO", "Bubblegum", "Trunks", "pie", "Space", "Marceline", "friends", "Lemongrab", "Rainicorn", "Gunter", "love"]
+var gifsArray 	= ["Jake", "Finn", "BMO", "Bubblegum", "Trunks", "pie", "space", "Marceline", "friends", "Lemongrab", "Rainicorn", "Gunter", "love"]
 console.log(gifsArray);
 
 var authKey 	= "&api_key=CwbAFzMwgWSjct9g4aWrQWAcl9ZiBO78";
@@ -40,7 +40,50 @@ function runQuery(numGifs, queryURL){
 			console.log(giphyData);
 			console.log(queryURL);
 		})
-}
+};
+
+//make buttons
+function renderButtons() {
+
+	//delete gif buttons
+	$("#buttons-display").empty();
+
+	//loop through gifs array
+	for (var i = 0; i < gifsArray.length; i++) {
+
+		//dynamically generate buttons for each word in array
+		var a = $("<button>");
+
+		//add class
+		a.addClass("gif-button-new btn-sm btn-info");
+
+		//add data-attribute with a value of gif at index i
+		a.attr("data-name"), gifsArray[i];
+
+		//provide the button's text with a value of the gif at index i
+		a.text(gifsArray[i]);
+
+		//add the button to the html
+		$("#buttons-display").append(a);
+
+		// console.log(gifsArray[i]);
+	};
+};
+
+//handles events where gif button is clicked
+$("#submit-button").on("click", function(event) {
+	//prevent form from submitting itself
+	event.preventDefault();
+
+	//grab text from input box
+	var newGif = $("#search").val().trim();
+
+	//gif from input box is added to gifsArray
+	gifsArray.push(newGif);
+
+	//re-process gifsArray
+	renderButtons();
+});
 
 //==================================================================
 		//MAIN PROCESSES (CALLS)
@@ -61,3 +104,5 @@ $("#submit-button").on("click", function() {
 $("#button").on("click", function() {
 	var gif = $(this).attr("data-")
 });
+
+renderButtons();
