@@ -7,72 +7,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="icon" type="image/x-icon" href="assets/images/source-code-icon-32-213242.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<audio id="my-audio" src="theme_song.mp3"></audio>
+	<audio id="audio" src="theme_song.mp3"></audio>
 </head>
 
 <body>
 
-	<div id="container">
+<div id="buttons-area"></div>
 
-		<div class="row col-md-12" id="content">
+<form id="search-form">
+	<label for="search-input">Add in your search term!</label>
+	<input type="text" id="search-input"><br>
+	<input type="submit" value="submit">
+</form>
 
-			<!-- <div class="col-md-1"></div> -->
-
-			<div class="col-md-12" id="topics-buttons-area">
-				<h1>Adventure Time GIFs!</h1>
-
-				<!-- buttons rendered here -->
-				<div class="col-md-12" id="buttons-display">
-				</div>
-
-			</div>
-
-			<!-- <div class="col-md-1"></div> -->
-
-		</div>
-
-		<div class="row col-md-12" id="gifs-and-add">
-
-			<div class="col-md-1"></div>
-
-			<div class="col-md-8" id="gifs-display">
-
-				<!-- gifs appear here -->
-
-			</div>
-
-			<div class="col-md-2" id="search-area">
-
-				<!-- search bar and submit button -->
-				<!-- <div class="form-group"> -->
-				<form id="gif-form">
-					
-					<input type="text" class="form-control" id="search" placeholder="add a new GIF button">
-
-					<!-- Button triggers new gif to be added -->
-    				<input class="btn btn-info" id="submit-button" type="submit" value="Go!">
-    					<!-- <h5>join phrases with "+" instead of spaces</h5> -->
-
-			</div>	
-
-			<div class="col-md-1"></div>
-
-		</div>
-
-
-		
-	</div>
-
-	<div id="footer" class="row">
-
-		<div class="col-md-12">
-			<h5>&copy; 2017 <a id="copyright-link" href="https://github.com/ashdonnelly" target="_blank">Ashley Donnelly</a></h5>
-		</div>
-
-	</div>
+<div id="searches"></div>
 
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 

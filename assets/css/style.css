@@ -47,9 +47,15 @@ button,
 	margin-top: 20px;
 }
 
-/*h5 {
+.rating {
 	color: #fafafa;
-}*/
+	padding-top: 10;
+	font-size: 22px;
+}
+
+hr {
+	border-color: #fafafa;
+}
 
 #footer {
 	color: #0f3446;
@@ -58,7 +64,7 @@ button,
     left: 0;
     bottom: 0;
     width: 100%;
-    text-align: center;
+    text-align: right;
 }
 
 a {
